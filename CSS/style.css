@@ -1,0 +1,386 @@
+@charset 'UTF-8';
+/*========= LoadingのためのCSS ===============*/
+/* Loading背景画面設定　*/
+#splash {
+  /*fixedで全面に固定*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  
+  background-size: 200% 200%; /*サイズを大きくひきのばす*/
+  
+  text-align: center;
+  color: #000;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Loading アイコンの大きさ設定　*/
+#splash_logo svg {
+  width: 100%;
+}
+/*=============== SVGアニメーション内の指定 =================*/
+/*アニメーション前の指定*/
+#mask path {
+  fill-opacity: 0; /*最初は透過0で見えない状態*/
+  transition: fill-opacity 1.0s; /*カラーがつく際のアニメーション0.5秒で変化*/
+  fill: none; /*塗りがない状態*/
+  stroke: #833ab4; /*線の色*/
+}
+/*アニメーション後に.doneというクラス名がで付与された時の指定*/
+#mask.done path {
+  fill: #cc6699; /*塗りの色*/
+  fill-opacity: 1; /*透過1で見える状態*/
+  stroke: none; /*線の色なし*/
+}
+/*ローディングCSS終了*/
+/*========= 画面遷移のためのCSS ===============*/
+/*画面遷移アニメーション*/
+.splashbg {
+  display: none;
+}
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg {
+  display: block;
+  animation-name: PageAnime;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  content: "";
+  position: fixed;
+  z-index: 999;
+  width: 50%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform: translateX(-300%) skewX(-45deg);
+  background-color: #A0D6E9; /*伸びる背景色の設定*/
+}
+@keyframes PageAnime {
+  0% {
+    transform-origin: left;
+    transform: translateX(-300%) skewX(-45deg);
+  }
+  100% {
+    transform-origin: left;
+    transform: translateX(500%) skewX(-45deg);
+  }
+}
+/*画面遷移の後現れるコンテンツ設定*/
+#container {
+  opacity: 0; /*はじめは透過0に*/
+}
+/*bodyにappearクラスがついたら出現*/
+body.appear #container {
+  animation-name: PageAnimeAppear;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes PageAnimeAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*========= ナビゲーションのためのCSS ===============*/
+/*アクティブになったエリア*/
+#g-nav.panelactive {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+/*丸の拡大*/
+.circle-bg {
+  position: fixed;
+  z-index: 3;
+  /*丸の形*/
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #F8A2A2;
+  /*丸のスタート位置と形状*/
+  transform: scale(0); /*scaleをはじめは0に*/
+  right: -50px;
+  top: calc(50% - 50px); /*50%から円の半径を引いた値*/
+  transition: all .6s; /*0.6秒かけてアニメーション*/
+}
+.circle-bg.circleactive {
+  transform: scale(50); /*クラスが付与されたらscaleを拡大*/
+}
+/*ナビゲーションの縦スクロール*/
+#g-nav-list {
+  display: none; /*はじめは表示なし*/
+  /*ナビの数が増えた場合縦スクロール*/
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#g-nav.panelactive #g-nav-list {
+  display: block; /*クラスが付与されたら出現*/
+}
+/*ナビゲーション*/
+#g-nav ul {
+  opacity: 0; /*はじめは透過0*/
+  /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*背景が出現後にナビゲーションを表示*/
+#g-nav.panelactive ul {
+  opacity: 1;
+}
+/* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
+#g-nav.panelactive ul li {
+  animation-name: gnaviAnime;
+  animation-duration: 1s;
+  animation-delay: .2s; /*0.2 秒遅らせて出現*/
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes gnaviAnime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*リストのレイアウト設定*/
+#g-nav li {
+  text-align: center;
+  list-style: none;
+}
+#g-nav li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 30px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-size: 30px;
+}
+/*========= ボタンのためのCSS ===============*/
+.openbtn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999; /*ボタンを最前面に*/
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+/*×に変化*/
+.openbtn span {
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #666;
+  width: 45%;
+}
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+.openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+.openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+/*スライダー*/
+#slider {
+  background-color: #8F8383;
+  width: 100%;
+  height: 100vh; /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+/*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+/*スクロールダウン全体の場所*/
+.scrolldown4 {
+  /*描画位置※位置は適宜調整してください*/
+  position: absolute;
+  bottom: 1%;
+  right: 50%;
+  /*矢印の動き1秒かけて永遠にループ*/
+  animation: arrowmove 1s ease-in-out infinite;
+}
+/*下からの距離が変化して全体が下→上→下に動く*/
+@keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: 3%;
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+/*Scrollテキストの描写*/
+.scrolldown4 span {
+  /*描画位置*/
+  position: absolute;
+  left: -20px;
+  bottom: 10px;
+  /*テキストの形状*/
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+/* 矢印の描写 */
+.scrolldown4:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: -6px;
+  /*矢印の形状*/
+  width: 1px;
+  height: 20px;
+  background: #eee;
+  transform: skewX(-31deg);
+}
+.scrolldown4:after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /*矢印の形状*/
+  width: 1px;
+  height: 50px;
+  background: #eee;
+}
+/*テキストタイピング風*/
+.TextTyping {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-35%);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 4rem;
+  color: #fff;}
+@media (max-width : 752px) {
+  .TextTyping {
+    font-size: 1.5rem;
+  }
+}
+/*文字列後ろの線の設定*/
+.TextTyping::after {
+  content: "|";
+  animation: typinganime .8s ease infinite;
+}
+@keyframes typinganime {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+.gallery {
+  columns: 4; /*段組みの数*/
+  padding: 0 15px; /*ギャラリー左右に余白をつける*/
+  margin: 0;
+  position: relative;
+}
+.gallery li {
+  margin-bottom: 20px; /*各画像下に余白をつける*/
+  list-style: none;
+}
+/*ギャラリー内のイメージは横幅100%にする*/
+.gallery img {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  vertical-align: bottom; /*画像の下にできる余白を削除*/
+}
+/*　横幅900px以下の段組み設定　*/
+@media only screen and (max-width: 900px) {
+  .gallery {
+    columns: 3;
+  }
+}
+@media only screen and (max-width : 752px) {
+  .gallery {
+    columns: 2;
+  }
+}
+/*ページトップ*/
+#page-top {
+  display: block;
+  background-color: #142988;
+  text-decoration: none;
+  width: 150px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 80px auto;
+}
+#page-top a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  line-height: 3;
+}
+/*背景アニメーション*/
+#particles-js {
+  z-index: -1000; /*描画を一番下に*/
+  width: 100%;
+  height: 100%;
+  background:#F9F4A7; /*背景色*/
+}
+/*カーソルを消す*/
+.typed-cursor {
+  display: none;
+}
+body {
+    background-color:#F9F4A7;
+}
+main {
+    margin-top:19px; 
+}

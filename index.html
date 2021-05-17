@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HappyBirthday</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css">
+<link href="CSS/reset.css" rel="stylesheet" type="text/css">
+<link href="CSS/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!--ローディング画面-->
+
+<div id="splash">
+  <div id="particles-js"></div>
+  <div id="splash_logo">
+    <svg version="1.1" id="mask" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1200px"
+	 height="76.6px" viewBox="0 0 600.9 76.6" style="overflow:visible;enable-background:new 0 0 600.9 76.6;" xml:space="preserve">
+      <style type="text/css">
+	.st0{fill:#A0D6E9;}
+</style>
+      <defs> </defs>
+      <g>
+        <path class="st0" d="M15.1,67.3L0,67.6L4.5,1l13.1-0.3l-2.2,32L33.6,32l1.9-31.7h13.8c-1.1,14.7-1.7,26.5-1.9,35.2
+		c-0.2,6.6-0.3,17-0.3,31.1H32l1-23.7c-5.1,0.6-8.2,1.1-9.3,1.3c-2.6,0.6-5.4,1.6-8.6,2.9V67.3z"/>
+        <path class="st0" d="M69.5,33l-8-7c3.8-3.2,6.6-5.1,8.3-5.8c3.2-1.3,6.3-1.7,9.3-1.3c4.3,0.6,7.5,2.6,9.6,5.8
+		c1.1,1.7,1.8,4,2.2,6.7c0.4,3,0.5,6.7,0.3,11.2L90,66l-14.4,0.6l1.9-5.8c-4.5,3.4-7.9,5.4-10.3,6.1c-4.1,1.1-7.7-0.1-10.9-3.5
+		c-1.9-2.1-2.9-5.6-2.9-10.3c0-3.8,1.1-7.4,3.2-10.6c3-4.5,6.8-7,11.5-7.7c1.9-0.2,4.1,0,6.4,0.6c1.5,0.4,3.3,1.6,5.4,3.5
+		c0.6-4.5,0.7-7.4,0.3-8.6c-0.6-1.7-2.1-2.2-4.5-1.6C74.4,29.3,72.3,30.6,69.5,33z M70.5,56.1c1.7-0.2,3.4-0.9,5.1-1.9
+		c3.4-1.9,4.5-4.3,3.2-7c-1.1-1.7-2.6-2.6-4.5-2.6c-0.9,0-2.1,0.4-3.8,1.3c-2.6,1.3-4.1,3.2-4.5,5.8c-0.2,1.7,0.2,3,1.3,3.8
+		C68.1,56.1,69.2,56.3,70.5,56.1z"/>
+        <path class="st0" d="M109.2,76.6H95.5l7-57.3l12.8,0.3l-0.6,5.8c3.4-3.6,6.4-5.7,9-6.1c3-0.4,6.1,0.5,9.3,2.9
+		c2.8,2.1,4.7,5,5.8,8.6c1.3,4.3,1.3,9.2,0,14.7c-1.3,5.3-3.4,9.8-6.4,13.5c-4.1,4.9-8.3,7.4-12.8,7.4c-2.8,0-5.9-1.1-9.3-3.2
+		L109.2,76.6z M110.8,49.6c-0.2,2.4,0.4,4,1.9,4.8c1.5,0.9,3,1,4.5,0.3c2.1-0.9,4.1-3.1,5.8-6.7c2.1-4.5,3.2-8.8,3.2-12.8
+		c0-3-0.4-4.8-1.3-5.4c-0.9-0.6-2.1-0.5-3.8,0.3c-2.6,1.5-4.8,4.2-6.7,8S111.3,45.8,110.8,49.6z"/>
+        <path class="st0" d="M157.6,76.6h-13.8l7-57.3l12.8,0.3l-0.6,5.8c3.4-3.6,6.4-5.7,9-6.1c3-0.4,6.1,0.5,9.3,2.9
+		c2.8,2.1,4.7,5,5.8,8.6c1.3,4.3,1.3,9.2,0,14.7c-1.3,5.3-3.4,9.8-6.4,13.5c-4.1,4.9-8.3,7.4-12.8,7.4c-2.8,0-5.9-1.1-9.3-3.2
+		L157.6,76.6z M159.2,49.6c-0.2,2.4,0.4,4,1.9,4.8c1.5,0.9,3,1,4.5,0.3c2.1-0.9,4.1-3.1,5.8-6.7c2.1-4.5,3.2-8.8,3.2-12.8
+		c0-3-0.4-4.8-1.3-5.4c-0.9-0.6-2.1-0.5-3.8,0.3c-2.6,1.5-4.8,4.2-6.7,8S159.6,45.8,159.2,49.6z"/>
+        <path class="st0" d="M204,75.9l3.2-10.6l-15.7-42l12.8-3.2l9,27.2l8.6-27.5l13.1,0.6c-3.2,9-6.3,18.2-9.3,27.5
+		c-3,9.8-5.8,19.3-8.3,28.5L204,75.9z"/>
+        <path class="st0" d="M266.2,66.6l5.1-63.1l19.5-2.2c4.9-0.6,8.8-0.6,11.5,0c4.7,1.1,8,3.4,9.9,7c1.7,3.2,1.9,7.7,0.6,13.5
+		c-0.9,3-2.4,5.6-4.5,7.7c-1.3,1.5-2.8,2.9-4.5,4.2c3,2.1,5,4.3,6.1,6.4c1.1,2.1,1.6,4.8,1.6,8c0,3.4-0.9,6.6-2.6,9.6
+		c-1.9,3.4-4.5,5.8-7.7,7s-7.2,1.9-11.9,1.9H266.2z M280.9,41l-0.6,14.1c3.6-0.2,6.5-0.7,8.6-1.6c3.8-1.5,6.2-3.7,7-6.7
+		c0.9-3.2,0-5.6-2.6-7c-1.5-0.9-3.8-0.9-7,0C284.4,40.1,282.6,40.6,280.9,41z M282.5,14.7l-1.3,15.1c3.8-0.9,6.8-1.6,9-2.2
+		c4.3-1.3,6.8-3.4,7.7-6.4c0.9-3.4,0.4-5.7-1.3-6.7c-1.1-0.6-2.2-1-3.5-1C291.6,13.5,288.1,13.9,282.5,14.7z"/>
+        <path class="st0" d="M334.1,20.5l-1.3,46.4h-14.7l2.9-47.1L334.1,20.5z M321.9,14.7c-1.5-1.5-2.2-3.4-2.2-5.8c0-3,0.7-5.2,2.2-6.7
+		c1.5-1.5,3.5-2.2,6.1-2.2s4.5,0.6,5.8,1.9c1.5,1.5,2.2,3.6,2.2,6.4c0,2.6-0.8,4.6-2.2,6.1c-1.5,1.5-3.5,2.2-6.1,2.2
+		S323.2,16,321.9,14.7z"/>
+        <path class="st0" d="M354.3,45.5L353,66.3l-12.8,0.6l4.2-47.4h12.5l-1.3,10.9c2.3-2.8,4.5-5,6.4-6.7c3-2.8,5.8-4.3,8.3-4.5
+		c2.1-0.2,3.9,0.4,5.4,1.9c1.7,1.7,2.7,4.3,2.9,7.7c0.2,3-0.3,7.2-1.6,12.5L364.5,41c0.9-2.8,1-4.6,0.3-5.4
+		c-0.9-1.1-2.2-0.5-4.2,1.6L354.3,45.5z"/>
+        <path class="st0" d="M393,27.5l3.8-27.2l12.5,1l-3.2,25.9H417v9.3l-11.5,0.6l-1.3,29.1h-14.1l1.6-27.5l-9.6,1.6l0.6-12.5L393,27.5z
+		"/>
+        <path class="st0" d="M435.3,66.6l-14.4,0.6l3.2-34.3L427,0.6l12.5,0.6l-2.6,23.1c5.1-3.4,9.7-4.8,13.8-4.2c3.2,0.4,5.8,2,7.7,4.8
+		c2.1,3,3.2,6.4,3.2,10.3l0.6,31.4l-13.8-0.3l0.6-19.9c0.2-5.3,0.2-8.5,0-9.6c-0.6-3-1.7-4.7-3.2-5.1c-2.1-0.6-4.3,0.8-6.4,4.2
+		c-0.9,1.3-1.7,3.2-2.6,5.8c-0.9,2.6-1.4,5.4-1.6,8.6V66.6z"/>
+        <path class="st0" d="M466.4,67.3l3.5-63.1l10.6-2.6c4.9-1.1,9.6-1.4,14.1-1c4.1,0.4,7.5,1.9,10.3,4.5c4.5,4.3,6.8,10.7,7,19.2
+		c0.2,11.3-2.5,21-8,29.1c-4.1,6-8.8,9.9-14.1,11.9c-3.6,1.3-7.9,1.9-12.8,1.9H466.4z M481.4,14.7l-2.6,39.4
+		c4.7-0.6,8.3-1.9,10.9-3.8c3.2-2.3,5.8-6.7,7.7-13.1c1.7-6,2.1-11.1,1.3-15.4c-1.1-4.9-2.9-7.7-5.4-8.3S486.8,13.2,481.4,14.7z"/>
+        <path class="st0" d="M532,33l-8-7c3.8-3.2,6.6-5.1,8.3-5.8c3.2-1.3,6.3-1.7,9.3-1.3c4.3,0.6,7.5,2.6,9.6,5.8c1.1,1.7,1.8,4,2.2,6.7
+		c0.4,3,0.5,6.7,0.3,11.2L552.5,66l-14.4,0.6l1.9-5.8c-4.5,3.4-7.9,5.4-10.3,6.1c-4.1,1.1-7.7-0.1-10.9-3.5
+		c-1.9-2.1-2.9-5.6-2.9-10.3c0-3.8,1.1-7.4,3.2-10.6c3-4.5,6.8-7,11.5-7.7c1.9-0.2,4.1,0,6.4,0.6c1.5,0.4,3.3,1.6,5.4,3.5
+		c0.6-4.5,0.7-7.4,0.3-8.6c-0.6-1.7-2.1-2.2-4.5-1.6C536.9,29.3,534.8,30.6,532,33z M533,56.1c1.7-0.2,3.4-0.9,5.1-1.9
+		c3.4-1.9,4.5-4.3,3.2-7c-1.1-1.7-2.6-2.6-4.5-2.6c-0.9,0-2.1,0.4-3.8,1.3c-2.6,1.3-4.1,3.2-4.5,5.8c-0.2,1.7,0.2,3,1.3,3.8
+		C530.6,56.1,531.7,56.3,533,56.1z"/>
+        <path class="st0" d="M569.8,75.9l3.2-10.6l-15.7-42l12.8-3.2l9,27.2l8.6-27.5l13.1,0.6c-3.2,9-6.3,18.2-9.3,27.5
+		c-3,9.8-5.8,19.3-8.3,28.5L569.8,75.9z"/>
+      </g>
+    </svg>
+    <!--このSVGタグの作り方は下記に記述--> 
+    <!--/splash_logo--></div>
+  
+  <!--/splash--></div>
+
+<!--ローディング画面終わり--> 
+
+<!---画面遷移用-->
+<div class="splashbg"></div>
+
+<!--コンテイナーの中身-->
+<div id="container">
+  <header id="header">
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+        <ul>
+          <li><a href="#">Top</a></li>
+          <li><a href="#">4th birthday</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="circle-bg"></div>
+    <div id="slider"></div>
+    <p class="TextTyping"></p>
+    <div class="scrolldown4"><span>Scroll</span></div>
+  </header>
+  <main class="main">
+    <div class="lightbox">
+      <ul class="gallery">
+        <li><a href="IMG/eiji.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji2.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji2.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji3.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji3.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji4.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji4.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji5.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji5.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji6.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji6.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji7.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji7.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji10.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji10.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji11.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji11.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji12.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji12.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji13.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji13.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji14.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji14.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji15.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji15.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji16.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji16.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji17.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji17.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji18.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji18.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji19.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji19.jpg" alt=""></a></li>
+        <li><a href="IMG/eiji20.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji20.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji21.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji21.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji23.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji23.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji24.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji24.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji25.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji25.jpg" alt=""></a></li>
+          
+          <li><a href="IMG/eiji26.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji26.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji27.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji27.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji28.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji28.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji29.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji29.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji30.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji30.jpg" alt=""></a></li>
+          
+          <li><a href="IMG/eiji31.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji31.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji33.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji33.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji34.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji34.jpg" alt=""></a></li>
+          
+          <li><a href="IMG/eiji35.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji35.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji36.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji20.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji36.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji36.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji37.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji37.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji38.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji38.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji39.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji39.jpg" alt=""></a></li>
+          <li><a href="IMG/eiji40.jpg" data-lightbox="g1" data-title="キャプション"><img src="IMG/eiji40.jpg" alt=""></a></li>
+      </ul>
+      <p id="page-top"><a href="#">Page Top</a></p>
+    </div>
+  </main>
+</div>
+
+<!--1.jQuery--> 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
+
+<!--2.プラグインのjQuery--> 
+<!--背景アニメーション　--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script> 
+<!--ライトボックス（ギャラリー）--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script> 
+<!--ロゴアニメーション--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script> 
+
+<!--スライドショー--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script> 
+
+<!--3.自作のJS--> 
+<!--テキストタイピングJS--> 
+<script type="text/javascript" src="JS/typed.js"></script> 
+<script type="text/javascript" src="JS/script.js"></script>
+</body>
+</html>
